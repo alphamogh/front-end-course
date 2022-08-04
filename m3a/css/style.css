@@ -12,7 +12,7 @@
 .navbar-toggler{
 	margin: 20px;
 }
-.navbar-toggler:hover {
+.navbar-toggler:hover, .navbar-toggler:focus {
   border-color: #fff;
 }
 .nav-item{
