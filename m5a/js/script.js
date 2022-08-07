@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
+// Start of Assignment
+/*
 $ajaxUtils.sendGetRequest(
   homeHtmlUrl,
   function (responseText) {
@@ -89,8 +91,8 @@ $ajaxUtils.sendGetRequest(
   },
   false);
 });
+*/
 
-/*
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
@@ -125,15 +127,15 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      // var homeHtmlToInsertIntoMainPage = ....
+       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,randomCategoryShortName,chosenCategoryShortName);
 
 
       // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
-
-    },
+	  insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
+	  
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
@@ -147,7 +149,9 @@ function chooseRandomCategory (categories) {
   return categories[randomArrayIndex];
 }
 
-*/
+// End of Assignment
+
+
 // Load the menu categories view
 dc.loadMenuCategories = function () {
   showLoading("#main-content");
