@@ -81,17 +81,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
+
 // Start of Assignment
-/*
-$ajaxUtils.sendGetRequest(
-  homeHtmlUrl,
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  },
-  false);
-});
-*/
 
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
@@ -113,8 +104,8 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
+
        var chosenCategoryShortName = chooseRandomCategory(categories);
-console.log(chosenCategoryShortName);
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
@@ -126,19 +117,17 @@ console.log(chosenCategoryShortName);
       // $dc.loadMenuItems('L')
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
-      //
-       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,'randomCategoryShortName',"'"+chosenCategoryShortName+"'");
 
+       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,'randomCategoryShortName',"'"+chosenCategoryShortName+"'");
 
       // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
-      // ....
+
 	  insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
 	}, 
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
-
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
@@ -150,7 +139,6 @@ function chooseRandomCategory (categories) {
 }
 
 // End of Assignment
-
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
